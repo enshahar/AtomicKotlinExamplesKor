@@ -3,11 +3,11 @@
 import atomictest.eq
 
 fun main() {
-  // Type is inferred:
+  // 타입을 추론한다
   val numbers = listOf(1, 2, 3)
   val strings =
     listOf("one", "two", "three")
-  // Exactly the same, but explicitly typed:
+  // 똑같은 코드지만 타입을 명시했다
   val numbers2: List<Int> = listOf(1, 2, 3)
   val strings2: List<String> =
     listOf("one", "two", "three")

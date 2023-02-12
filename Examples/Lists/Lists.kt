@@ -6,13 +6,13 @@ fun main() {
   val ints = listOf(99, 3, 5, 7, 11, 13)
   ints eq "[99, 3, 5, 7, 11, 13]"   // [1]
 
-  // Select each element in the List:
+  // List의 각 원소에 대해 이터레이션하기
   var result = ""
   for (i in ints) {                 // [2]
     result += "$i "
   }
   result eq "99 3 5 7 11 13"
 
-  // "Indexing" into the List:
+  // List 원소를 '인덱싱'하기
   ints[4] eq 11                     // [3]
 }

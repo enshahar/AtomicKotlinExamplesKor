@@ -3,7 +3,7 @@
 package classDelegationExercise2
 import atomictest.trace
 
-// Duck Library
+// 오리(Duck) 라이브러리
 interface Duck {
   fun quack()
   fun swim()
@@ -19,7 +19,7 @@ fun interactWithDuck(duck: Duck) {
   duck.swim()
 }
 
-// Our codebase
+// 우리의 코드 기반
 interface Crocodile {
   fun bite()
 }

@@ -15,5 +15,5 @@ fun main() {
   va("Vanbo", 2) eq "VanboVanboVanboVanbo"
   "Vanbo".vb(2) eq "VanboVanboVanboVanbo"
   vb("Vanbo", 2) eq "VanboVanboVanboVanbo"
-  // "Vanbo".va(2) // Doesn't compile
+  // "Vanbo".va(2) // 컴파일되지 않음
 }

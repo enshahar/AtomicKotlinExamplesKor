@@ -3,7 +3,7 @@
 
 fun oneOrTheOther(exp: Boolean): String =
   if (exp)
-    "True!" // No 'return' necessary
+    "True!" // 'return'을 쓰지 않아도 된다
   else
     "False"
 

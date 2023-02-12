@@ -47,7 +47,7 @@ fun consumer(factory: VendorFactory) {
 }
 
 fun main() {
-  // Implementations are interchangeable:
+  // 구현을 서로 바꿔 끼울 수 있다
   consumer(Vendor1.factory)
   consumer(Vendor2.factory)
   trace eq """

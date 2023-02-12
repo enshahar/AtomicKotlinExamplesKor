@@ -13,5 +13,5 @@ class Z(var i: Int = 0) {
 
 fun Z.decrement() {
   i--
-  // j -- // Cannot access
+  // j -- // 접근할 수 없음
 }

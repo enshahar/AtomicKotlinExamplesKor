@@ -20,7 +20,7 @@ fun main() {
   messageStorage.addMessage("first")
   messageStorage.addMessage("second")
   messageStorage.messages eq listOf("first", "second")
-  // doesn't compile:
+  // 컴파일되지 않는다
 //  messageStorage.messages.remove("first")
 */
 }

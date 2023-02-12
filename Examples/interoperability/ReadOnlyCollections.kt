@@ -4,9 +4,9 @@ import atomictest.eq
 
 fun main() {
   val mutable = mutableListOf(1, 2, 3)
-  // Read-only reference to a mutable list:
+  // 가변 리스트에 대한 읽기 전용 참조
   val list: List<Int> = mutable
   mutable += 4
-  // list has changed:
+  // list 내부가 달라졌다
   list eq "[1, 2, 3, 4]"
 }

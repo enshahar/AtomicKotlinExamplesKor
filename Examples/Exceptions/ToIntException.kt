@@ -3,7 +3,7 @@
 package exceptions
 
 fun erroneousCode() {
-  // Uncomment this line to get an exception:
+  // 예외를 보려면 다음 줄의 주석을 해제하라
   // val i = "1$".toInt()        // [1]
 }
 

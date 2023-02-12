@@ -9,8 +9,8 @@ fun main() {
   val string: String = "abc"
   val character: Char = 'a'
 
-  // Can be combined:
-  // String can be combined with every other type:
+  // 조합 가능:
+  // String은 다른 모든 타입과 조합이 가능하다
   val si: String = string + int
   val sd: String = string + double
   val sb: String = string + boolean
@@ -25,7 +25,7 @@ fun main() {
     "with every other type using '+':")
   println("String")
 
-  // Can't be combined:
+  // 조합 불가능:
   // val bb = boolean + boolean
   // val ic = int + character
   // val ds = double + string

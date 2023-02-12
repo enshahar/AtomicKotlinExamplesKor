@@ -19,7 +19,7 @@ fun interactWithDuck(duck: Duck) {
   duck.swim()
 }
 
-// Our codebase
+// 우리 코드 기반
 interface Crocodile {
   fun bite()
 }

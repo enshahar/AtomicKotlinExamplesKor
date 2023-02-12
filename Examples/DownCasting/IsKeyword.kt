@@ -3,10 +3,10 @@
 import downcasting.*
 
 fun main() {
-  val b1: Base = Derived1() // Upcast
+  val b1: Base = Derived1() // 업캐스트
   if(b1 is Derived1)
-    b1.g() // Within scope of "is" check
-  val b2: Base = Derived2() // Upcast
+    b1.g() // 'is' 검사의 영역 내부
+  val b2: Base = Derived2() // 업캐스트
   if(b2 is Derived2)
-    b2.h() // Within scope of "is" check
+    b2.h() // 'is' 검사의 영역 내부
 }

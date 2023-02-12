@@ -4,6 +4,6 @@ package abstractclasses
 
 interface IntList {
   val name: String
-  // Doesn't compile:
+  // 컴파일 되지 않는다
   // val list = listOf(0)
 }

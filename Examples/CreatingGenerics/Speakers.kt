@@ -19,7 +19,7 @@ fun talk(speaker: Any) = when (speaker) {
   is Person -> speaker.speak()
   is Dog -> speaker.bark()
   is Robot -> speaker.communicate()
-  else -> "Not a talker" // Or exception
+  else -> "Not a talker" // 또는 예외 발생
 }
 
 fun main() {

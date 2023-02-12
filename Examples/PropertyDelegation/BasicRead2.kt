@@ -7,7 +7,7 @@ import kotlin.reflect.KProperty
 
 class Readable2(val i: Int) {
   val value: String by BasicRead2()
-  // SAM conversion:
+  // SAM 변환:
   val value2: String by
   ReadOnlyProperty { _, _ -> "getValue: $i" }
 }

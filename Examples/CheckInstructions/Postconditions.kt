@@ -8,7 +8,7 @@ val resultFile = DataFile("Results.txt")
 fun createResultFile(create: Boolean) {
   if (create)
     resultFile.writeText("Results\n# ok")
-  // ... other execution paths
+  // ... 다른 실행 경로들
   check(resultFile.exists()) {
     "${resultFile.name} doesn't exist!"
   }

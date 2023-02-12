@@ -8,7 +8,7 @@ fun main() {
   var mutablePetList: MutableList<Pet> =
     mutableListOf(Cat())
   mutablePetList.add(Dog())
-  // Type mismatch:
+  // 타입 불일치(type mismatch)
   // mutablePetList =
   //    mutableListOf<Cat>(Cat())  // [1]
 }

@@ -9,7 +9,7 @@ fun main() {
       session.speaker in favoriteSpeakers) {
       return true
     }
-    // ... more checks
+    // ... 추가 검사
     return false
   }
   sessions.any(::interesting) eq true

@@ -18,6 +18,6 @@ fun main() {
   val b = E(2)
   (a == b) eq false   // a.equals(b)
   (a != b) eq true    // !a.equals(b)
-  // Reference equality:
+  // 참조 동등성:
   (E(1) === E(1)) eq false
 }

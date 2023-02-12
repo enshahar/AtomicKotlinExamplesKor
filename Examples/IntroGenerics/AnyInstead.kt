@@ -14,7 +14,7 @@ class Dog {
 fun main() {
   val holder = AnyHolder(Dog())
   val any = holder.getValue()
-  // Doesn't compile:
+  // 컴파일되지 않는다
   // any.bark()
 
   val genericHolder = GenericHolder(Dog())

@@ -14,14 +14,14 @@ public class UseDataClass {
     eq(e,
       "Staff(name=Uranus, role=Assistant)");
 
-    // Call copy() from the data class:
+    // 데이터 클래스의 copy()를 호출한다
     Staff cf = e.copy("Cornfed", "Sidekick");
     eq(cf,
       "Staff(name=Cornfed, role=Sidekick)");
 
     HashMap<Staff, String> hm =
       new HashMap<>();
-    // Employees work as hash keys:
+    // Staff 객체를 해시 키로 사용한다
     hm.put(e, "Cheerful");
     eq(hm.get(e), "Cheerful");
   }

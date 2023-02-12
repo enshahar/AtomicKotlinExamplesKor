@@ -11,7 +11,7 @@ fun main() {
   println(house.sofa)
   house.sofa = "New leather sofa: $3,099.00"
   println(house.sofa)
-  // Cannot reassign the val to a new House:
+  // val에 새 House를 대입할 수 없다
   // house = House()
 }
 /* Output:

@@ -16,11 +16,11 @@ fun addConnection(first: City, second: City) {
 }
 
 fun City.allReachableRecursive(): Set<City> {
-  // Stores all cities reachable from the given city:
+  // 주어진 도시에서 도착할 수 있는 모든 도시를 저장한다
   val connections = mutableSetOf<City>()
 
-  // Add all connections reachable
-  // from 'current' city to 'connections' Set
+  // `current` 도시에서 도달할 수 있는
+  // 모든 연결을 `connections` 집합에 추가한다
   fun addConnectionsFrom(current: City) {
     if (current in connections) return
     connections += current
@@ -35,16 +35,16 @@ fun City.allReachableRecursive(): Set<City> {
 }
 
 fun City.allReachableIterative(): Set<City> {
-  // Stores all cities reachable from the given city
+  // 주어진 도시에서 도착할 수 있는 모든 도시를 저장한다
   val connections = mutableSetOf<City>()
-  // Stores all cities for which direct connections are to be analyzed
+  // 직접 연결이 되어있는 모든 도시를 분석할 것이다
   val toBeAnalyzed = mutableSetOf(this)
 
-  // For each 'current' city from 'toBeAnalyzed' set:
-  // - Unmark it (remove from 'to be analyzed' set)
-  // - If it's already in 'connections', do nothing
-  // - Add it to 'connections'
-  // - Mark all its connections as 'to be analyzed'
+  // 'toBeAnalyzed' 집합에 있는 모든 `current` 도시에 대해:
+  // - 도시 마크를 해제한다('toBeAnalyzed' 집합에서 제외)
+  // - 현재 도시가 이미 'connections'에 있다면 아무 일도 하지 않는다
+  // - 현재 도시를 'connections'에 추가한다
+  // - 현재 도시에 연결된 모든 도시를 'toBeAnalyzed'에 추가한다
   while (toBeAnalyzed.isNotEmpty()) {
     val current = toBeAnalyzed.first()
 

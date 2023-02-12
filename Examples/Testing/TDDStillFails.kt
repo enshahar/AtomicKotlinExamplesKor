@@ -4,7 +4,7 @@ package testing2
 import atomictest.eq
 
 fun main() {
-  // Everything fails:
+  // 모든 테스트가 실패함
   // calculateBMI(160, 68) eq "Normal weight"
   // calculateBMI(100, 68) eq "Underweight"
   // calculateBMI(200, 68) eq "Overweight"

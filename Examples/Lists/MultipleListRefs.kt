@@ -7,6 +7,6 @@ fun main() {
   val second: List<Int> = first
   second eq listOf(1)
   first.add(2)
-  // second sees the change:
+  // second도 first에 의해 변경된 내용을 보게 된다
   second eq listOf(1, 2)
 }

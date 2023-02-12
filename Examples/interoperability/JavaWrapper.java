@@ -5,9 +5,9 @@ import java.util.*;
 
 public class JavaWrapper {
   public static void main(String[] args) {
-    // Primitive type
+    // 원시 타입
     int i = 10;
-    // Wrapper types
+    // 래퍼 타입
     Integer iOrNull = null;
     List<Integer> list = new ArrayList<>();
   }

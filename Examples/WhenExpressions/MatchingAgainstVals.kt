@@ -10,7 +10,7 @@ fun main() {
       yes -> trace("Hooray!")
       no -> trace("Too bad!")
     }
-    // The same logic using 'if':
+    // 'if'로 같은 로직을 표현한다
     if (choice == yes) trace("Hooray!")
     else if (choice == no) trace("Too bad!")
   }

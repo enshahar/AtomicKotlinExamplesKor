@@ -6,7 +6,7 @@ import atomictest.eq
 
 object KotlinCode2 {
   val a = AnnotatedJTool.getSafe("")
-  // Doesn't compile:
+  // 컴파일 되지 않는다.
   // val b = AnnotatedJTool.getSafe(null)
   val c = AnnotatedJTool.getUnsafe("")
   val d = AnnotatedJTool.getUnsafe(null)

@@ -22,8 +22,8 @@ private fun <L, R> test(
 }
 
 /**
- * Compares the string representation
- * of this object with the string `rval`.
+ * this 객체의 문자열 표현을
+ * `rval` 문자열과 비교한다
  */
 infix fun Any.eq(rval: String) {
   test(this, rval) {
@@ -32,7 +32,7 @@ infix fun Any.eq(rval: String) {
 }
 
 /**
- * Verifies this object is equal to `rval`.
+ * this 객체가 `rval`과 같은지 검증한다
  */
 infix fun <T> T.eq(rval: T) {
   test(this, rval) {
@@ -41,7 +41,7 @@ infix fun <T> T.eq(rval: T) {
 }
 
 /**
- * Verifies this object is != `rval`.
+ * this != `rval` 인지 검증한다
  */
 infix fun <T> T.neq(rval: T) {
   test(this, rval, checkEquals = false) {
@@ -50,8 +50,8 @@ infix fun <T> T.neq(rval: T) {
 }
 
 /**
- * Verifies that a `Double` number is equal
- * to `rval` within a positive delta.
+ * 어떤 Double 값이 rval에 지정된 Double 값과 같은지 비교한다
+ * 두 값의 차이가 작은 양숫값(0.0000001)보다 작으면 두 Double을 같다고 판정한다
  */
 infix fun Double.eq(rval: Double) {
   test(this, rval) {
@@ -60,7 +60,7 @@ infix fun Double.eq(rval: Double) {
 }
 
 /**
- * Holds captured exception information:
+ * 포획한 예외 정보를 저장하는 클래스
  */
 class CapturedException(
   private val exceptionClass: KClass<*>?,
@@ -86,11 +86,11 @@ class CapturedException(
 }
 
 /**
- * Captures an exception and produces
- * information about it. Usage:
- *    capture {
- *      // Code that fails
- *    } eq "FailureException: message"
+ * 예외를 포획해 CapturedException에 저장한 후 돌려준다
+ * 사용법
+ * capture {
+ * // 실패가 예상되는 코드
+ * } eq "예외클래스이름: 메시지"
  */
 fun capture(f:() -> Unit): CapturedException =
   try {
@@ -103,11 +103,11 @@ fun capture(f:() -> Unit): CapturedException =
   }
 
 /**
- * Accumulates output when called as in:
- *   trace("info")
- *   trace(object)
- * Later compares accumulated to expected:
- *   trace eq "expected output"
+ * 다음과 같이 여러 trace() 호출의 출력을 누적시켜준다
+ * trace("info")
+ * trace(object)
+ * 나중에 누적된 출력을 예상값과 비교할 수 있다
+ * trace eq "expected output"
  */
 object trace {
   private val trc = mutableListOf<String>()
@@ -115,8 +115,8 @@ object trace {
     trc += obj.toString()
   }
   /**
-   * Compares trc contents to a multiline
-   * `String` by ignoring white space.
+   * trc의 내용을 여러 줄 String과 비교한다
+   * 비교할 때 공백은 무시한다
    */
   infix fun eq(multiline: String) {
     val trace = trc.joinToString("\n")

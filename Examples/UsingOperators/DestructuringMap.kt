@@ -8,7 +8,7 @@ fun main() {
     key eq "a"
     value eq 1
   }
-  // The Destructuring assignment becomes:
+  // 앞의 구조 분해 대입은 다음과 같다
   for (entry in map) {
     val key = entry.component1()
     val value = entry.component2()

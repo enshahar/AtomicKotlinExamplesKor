@@ -7,6 +7,6 @@ fun main() {
   val s2: String? = s1
 
   s1.length eq 3         // [1]
-  // Doesn't compile:
+  // 컴파일되지 않는다
   // s2.length           // [2]
 }

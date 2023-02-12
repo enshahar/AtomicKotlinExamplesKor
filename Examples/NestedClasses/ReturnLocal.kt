@@ -11,5 +11,6 @@ fun createAmphibian(): Amphibian {
 
 fun main() {
   val amphibian = createAmphibian()
+  // 다음과 같이 다운캐스트시 컴파일 오류가 발생한다
   // amphibian as Frog
 }

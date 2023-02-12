@@ -14,8 +14,8 @@ class WithSecondary(i: Int) {
     this(s.first()) {             // [1]
     trace("Secondary: \"$s\"")
   }
-  /* Doesn't compile without a call
-     to the primary constructor:
+  /* 주생성자를 호출하지 않으면
+     컴파일이 되지 않는다
   constructor(f: Float) {         // [2]
     trace("Secondary: $f")
   }

@@ -6,7 +6,7 @@ import atomictest.eq
 fun <T: Disposable> nameOf(disposable: T) =
   disposable.name
 
-// As an extension:
+// 확장 함수
 fun <T: Disposable> T.name() = name
 
 fun main() {

@@ -6,7 +6,7 @@ import atomictest.*
 fun trim(shape: Shape) {
   trace(shape.draw())
   trace(shape.erase())
-  // Doesn't compile:
+  // 컴파일되지 않는다
   // shape.color()    // [1]
   // shape.rotate()   // [2]
 }

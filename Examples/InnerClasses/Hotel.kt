@@ -5,7 +5,7 @@ import atomictest.eq
 
 class Hotel(private val reception: String) {
   open inner class Room(val id: Int = 0) {
-    // Uses 'reception' from outer class:
+    // Room을 둘러싼 클래스의 'reception'을 사용한다
     fun callReception() =
       "Room $id Calling $reception"
   }
@@ -15,8 +15,8 @@ class Hotel(private val reception: String) {
 
 fun main() {
   val nycHotel = Hotel("311")
-  // You need an outer object to
-  // create an instance of the inner class:
+  // 내부 클래스의 인스턴스를 생성하려면
+  // 그 내부 클래스를 둘러싼 클래스의 인스턴스가 필요하다
   val room = nycHotel.Room(319)
   room.callReception() eq
     "Room 319 Calling 311"

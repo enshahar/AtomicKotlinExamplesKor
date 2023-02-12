@@ -5,7 +5,7 @@ import atomictest.eq
 
 class ExplicitControls : Controls {
   private val controls = SpaceShipControls()
-  // Delegation by hand:
+  // 수동으로 위임 구현하기
   override fun up(velocity: Int) =
     controls.up(velocity)
   override fun back(velocity: Int) =
@@ -18,7 +18,7 @@ class ExplicitControls : Controls {
     controls.left(velocity)
   override fun right(velocity: Int) =
     controls.right(velocity)
-  // Modified implementation:
+  // 변형한 구현
   override fun turboBoost(): String =
     controls.turboBoost() + "... boooooost!"
 }

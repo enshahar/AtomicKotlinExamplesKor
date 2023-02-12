@@ -11,7 +11,7 @@ data class N(var n: Int) : Comparable<N> {
 }
 
 fun main() {
-  val rnd = Random(47) // For repeatability
+  val rnd = Random(47) // 테스트 반복을 위해 씨앗값 설정
   val key = N(11)
   val map = mutableMapOf(key to 47)
   trace(map[key])

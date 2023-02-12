@@ -4,7 +4,7 @@ package inheritanceextensions2
 import usefullibrary.*
 import atomictest.*
 
-class MyClass { // Not open
+class MyClass { // open된 클래스가 아님
   fun g() = trace("g()")
   fun h() = trace("h()")
 }

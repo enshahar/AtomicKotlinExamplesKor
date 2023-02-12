@@ -3,12 +3,12 @@
 package operatoroverloading
 import atomictest.eq
 
-// Unary operators:
+// 단항 연산자
 operator fun E.unaryPlus() = E(v)
 operator fun E.unaryMinus() = E(-v)
 operator fun E.not() = this
 
-// Increment/decrement:
+// 증가/감소 연산자
 operator fun E.inc() = E(v + 1)
 operator fun E.dec() = E(v - 1)
 
@@ -18,11 +18,11 @@ fun unary(a: E) {
   !a               // not()
 
   var b = a
-  b++             // inc() (must be var)
-  b--             // dec() (must be var)
+  b++             // inc() (var에서만 가능)
+  b--             // dec() (var에서만 가능)
 }
 
-// Binary operators:
+// 2항 연산자
 operator fun E.plus(e: E) = E(v + e.v)
 operator fun E.minus(e: E) = E(v - e.v)
 operator fun E.times(e: E) = E(v * e.v)
@@ -37,7 +37,7 @@ fun binary(a: E, b: E) {
   a % b            // a.rem(b)
 }
 
-// Augmented assignment:
+// 복합 대입 연산자
 operator fun E.plusAssign(e: E) { v += e.v }
 operator fun E.minusAssign(e: E) { v - e.v }
 operator fun E.timesAssign(e: E) { v *= e.v }

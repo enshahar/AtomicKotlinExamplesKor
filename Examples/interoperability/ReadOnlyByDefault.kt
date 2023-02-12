@@ -10,6 +10,6 @@ interface Zoo {
 
 fun visitZoo(zoo: Zoo) {
   val animals = zoo.viewAnimals()
-  // Compile-time error:
+  // 컴파일 시점 오류
   // animals.add(Animal("Grumpy Cat"))
 }

@@ -11,9 +11,9 @@ data class Contact(
 )
 
 fun main() {
-  // These seem the same, but they're not:
+  // 아래 둘은 같아 보이지만 그렇지 않다
   Person("Cleo") neq Person("Cleo")
-  // A data class defines equality sensibly:
+  // 데이터 클래스는 타당한 동등성 검사를 제공한다
   Contact("Miffy", "1-234-567890") eq
   Contact("Miffy", "1-234-567890")
 }

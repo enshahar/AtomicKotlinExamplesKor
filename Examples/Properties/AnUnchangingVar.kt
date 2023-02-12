@@ -7,8 +7,8 @@ class Sofa {
 
 fun main() {
   var sofa = Sofa()
-  // Not allowed:
+  // 다음은 허용되지 않음
   // sofa.cover = "New cover"
-  // Reassigning a var:
+  // var에 재대입하기
   sofa = Sofa()
 }

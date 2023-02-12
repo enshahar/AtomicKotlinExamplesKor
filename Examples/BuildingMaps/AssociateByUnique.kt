@@ -4,8 +4,8 @@ import buildingmaps.*
 import atomictest.eq
 
 fun main() {
-  // associateBy() fails when the key isn't
-  // unique -- values disappear:
+  // associateBy()는 키가 유일하지 않은 경우 실패한다
+  // 즉, 원본의 값 중 일부가 사라진다
   val ages = people().associateBy { it.age }
   ages eq mapOf(
     21 to Person("Franz", 21),

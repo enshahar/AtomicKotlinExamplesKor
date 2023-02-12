@@ -2,16 +2,16 @@
 // (c)2021 Mindview LLC. See Copyright.txt for permissions.
 package inheritance
 
-// This class can be inherited:
+// 이 클래스는 상속될 수 있다
 open class Parent
 
 class Child : Parent()
 
-// Child is not open, so this fails:
+// Child는 열려 있지 않으므로 다음 상속은 실패한다
 // class GrandChild : Child()
 
-// This class can't be inherited:
+// 이 클래스는 상속될 수 없다
 final class Single
 
-// The same as using 'final':
+// 'final'을 쓴 선언과 같은 효과를 낸다
 class AnotherSingle

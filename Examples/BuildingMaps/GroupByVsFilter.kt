@@ -6,12 +6,12 @@ import atomictest.eq
 fun main() {
   val groups =
     people().groupBy { it.name.first() }
-  // groupBy() produces map-speed access:
+  // groupBy()는 빠르게 맵을 만든다
   groups['A'] eq listOf(Person("Alice", 21),
     Person("Arthricia", 15))
   groups['Z'] eq null
 
-  // Must repeat filter() for each character:
+  // filter()를 사용하면 각 문자에 대해 filter()를 반복 실행해야 한다
   people().filter {
     it.name.first() == 'A'
   } eq listOf(Person("Alice", 21),

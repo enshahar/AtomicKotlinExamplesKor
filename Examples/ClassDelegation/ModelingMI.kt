@@ -25,9 +25,9 @@ class UserInput : MouseManager {
   override fun hovering() = true
 }
 
-// Even if we make the classes open, we
-// get an error because only one class may
-// appear in a supertype list:
+// 앞의 두 클래스를 open으로 정의한다고 해도 하위 타입을
+// 정의할 때는 상위 타입 목록에 클래스를 하나만 넣을 수 있기
+// 때문에 다음과 같이 쓸 수는 없다.
 // class Button : ButtonImage(), UserInput()
 
 class Button(
@@ -44,7 +44,7 @@ fun main() {
     "painting ButtonImage(10, 5)"
   button.clicked() eq true
   button.hovering() eq true
-  // Can upcast to both delegated types:
+  // 위임한 두 타입으로 업캐스트가 모두 가능하다
   val rectangle: Rectangle = button
   val mouseManager: MouseManager = button
 }

@@ -11,5 +11,5 @@ fun bar() {
 }
 
 fun main() {
-  // bar() // Uncomment this to see exception
+  // bar() // 예외 발생을 보려면 이 줄의 주석을 해제할것
 }

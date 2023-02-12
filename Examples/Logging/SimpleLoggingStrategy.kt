@@ -3,12 +3,12 @@
 package logging
 import checkinstructions.DataFile
 
-val logFile = // Reset ensures an empty file:
+val logFile = // reset()은 파일이 비어 있게 만든다
   DataFile("simpleLogFile.txt").reset()
 
 fun debug(msg: String) =
   System.err.println("Debug: $msg")
-// To disable:
+// 비활성화하고 싶으면 다음과 같이 바꿔라
 // fun debug(msg: String) = Unit
 
 fun trace(msg: String) =

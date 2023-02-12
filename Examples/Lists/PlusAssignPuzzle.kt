@@ -3,19 +3,19 @@
 import atomictest.eq
 
 fun main() {
-    // Mutable List assigned to a 'val'/'var':
+    // 'val'/'var'에 가변 리스트를 대입하는 경우:
     val list1 = mutableListOf('A') // or 'var'
-    list1 += 'A' // Is the same as:
+    list1 += 'A' // 다음 줄과 같다:
     list1.plusAssign('A')               // [1]
 
-    // Immutable List assigned to a 'val':
+    // 'val'에 불변 리스트를 대입하는 경우:
     val list2 = listOf('B')
-    // list2 += 'B' // Is the same as:
+    // list2 += 'B' // 다음 줄과 같다:
     // list2 = list2 + 'B'              // [2]
 
-    // Immutable List assigned to a 'var':
+    // 'var'에 불변 리스트를 대입하는 경우:
     var list3 = listOf('C')
-    list3 += 'C' // Is the same as:
+    list3 += 'C' // 다음 줄과 같다:
     val newList = list3 + 'C'           // [3]
     list3 = newList                     // [4]
 

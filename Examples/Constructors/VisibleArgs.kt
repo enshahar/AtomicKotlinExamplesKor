@@ -12,6 +12,6 @@ fun main() {
     FixedNameAlien("Krombopulos Michael")
 
   alien1.name = "Parasite"
-  // Can't do this:
+  // 다음과 같이 할 수는 없다
   // alien2.name = "Parasite"
 }

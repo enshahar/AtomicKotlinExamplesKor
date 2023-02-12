@@ -9,7 +9,7 @@ fun main() {
       session.speaker in favoriteSpeakers) {
       return@any true
     }
-    // ... more checks
+    // ... 추가 검사
     false
   } eq true
 }

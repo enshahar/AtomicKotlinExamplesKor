@@ -11,7 +11,7 @@ object CreatePet {
   fun home() = " home!"
   fun dog(): Pet {
     val say = "Bark"
-    // Local inner class:
+    // 지역 내부 클래스
     class Dog : Pet {
       override fun speak() = say + home()
     }
@@ -19,14 +19,14 @@ object CreatePet {
   }
   fun cat(): Pet {
     val emit = "Meow"
-    // Anonymous inner class:
+    // 익명 내부 클래스
     return object: Pet {
       override fun speak() = emit + home()
     }
   }
   fun hamster(): Pet {
     val squeak = "Squeak"
-    // SAM conversion:
+    // SAM 변환
     return Pet { squeak + home() }
   }
 }

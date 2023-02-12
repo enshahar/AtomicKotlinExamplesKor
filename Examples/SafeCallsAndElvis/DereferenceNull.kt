@@ -3,6 +3,6 @@
 
 fun main() {
   val s: String? = null
-  // Doesn't compile:
+  // 컴파일 되지 않는다
   // s.length        // [1]
 }

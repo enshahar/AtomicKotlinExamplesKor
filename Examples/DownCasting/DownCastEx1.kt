@@ -18,7 +18,7 @@ class Derived2 : Base {
 }
 
 fun checkAndCall(b: Base) {
-  b.f() // Polymorphic call
+  b.f() // 다형적 호출
   when(b) {
     is Derived1 -> b.g()
     is Derived2 -> b.h()
@@ -26,8 +26,8 @@ fun checkAndCall(b: Base) {
 }
 
 fun main() {
-  checkAndCall(Derived1()) // Upcast
-  checkAndCall(Derived2()) // Upcast
+  checkAndCall(Derived1()) // 업캐스트
+  checkAndCall(Derived2()) // 업캐스트
   trace eq """
     Derived1.f()
     Derived1.g()

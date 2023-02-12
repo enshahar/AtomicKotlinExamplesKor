@@ -5,7 +5,7 @@ import atomictest.eq
 
 class WithObjectProperty {
   companion object {
-    private var n: Int = 0 // Only one
+    private var n: Int = 0 // 단 하나만 생김
   }
   fun increment() = ++n
 }

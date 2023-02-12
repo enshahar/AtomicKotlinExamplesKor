@@ -13,10 +13,10 @@ fun lambdaUnitReturn () {
     "Unit ignores the return value" +
     "So it can be anything ..."
   }
-  unitReturn { 1 } // ... of any type ...
-  unitReturn { }   // ... or nothing
+  unitReturn { 1 } // ... 임의의 타입 ...
+  unitReturn { }   // ... 아무 값도 만들어내지 않는 경우
   nonUnitReturn {
     "Must return the proper type"
   }
-  // nonUnitReturn { } // Not an option
+  // nonUnitReturn { } // 이렇게 쓸 수 없음
 }

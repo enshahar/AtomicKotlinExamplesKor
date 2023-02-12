@@ -4,57 +4,58 @@ package innerclasses
 import atomictest.eq
 import typechecking.name
 
-class Fruit { // Implicit label @Fruit
+class Fruit { // @Fruit라는 레이블이 암시적으로 붙는다
   fun changeColor(color: String) =
     "Fruit $color"
   fun absorbWater(amount: Int) {}
-  inner class Seed { // Implicit label @Seed
+  inner class Seed {  // @Seed라는 레이블이 암시적으로 붙는다
     fun changeColor(color: String) =
       "Seed $color"
     fun germinate() {}
     fun whichThis() {
-      // Defaults to the current class:
+      // 디폴트로 (가장 안쪽의) 현재 클래스를 가리킨다
       this.name eq "Seed"
-      // To clarify, you can redundantly
-      // qualify the default this:
+      // 명확히 하기 위해 디폴트 this를
+      // 한정시킬 수 있다
       this@Seed.name  eq "Seed"
-      // Must explicitly access Fruit:
+      // name이 Fruit와 Seed에 다 있기 때문에
+      // Fruit를 명시해 접근해야 한다
       this@Fruit.name  eq "Fruit"
-      // Cannot access a further-inner class:
+      // 현재 클래스의 내부 클래스에 @레이블을 써서 접근할 수는 없다
       // this@DNA.name
     }
-    inner class DNA { // Implicit label @DNA
+    inner class DNA { // @DNA라는 레이블이 암시적으로 붙는다
       fun changeColor(color: String) {
-        // changeColor(color) // Recursive
+        // changeColor(color) // 재귀 호출
         this@Seed.changeColor(color)
         this@Fruit.changeColor(color)
       }
       fun plant() {
-        // Call outer-class functions
-        // Without qualification:
+        // 한정을 시키지 않고 외부 클래스의
+        // 함수를 호출할 수 있다
         germinate()
         absorbWater(10)
       }
-      // Extension function:
-      fun Int.grow() { // Implicit label @grow
-        // Default is the Int.grow() receiver:
+      // 확장 함수
+      fun Int.grow() { // @grow라는 암시적 레이블이 붙는다
+        // 디폴트는 Int.grow()로, 'Int'를 수신 객체로 받는다
         this.name eq "Int"
-        // Redundant qualification:
+        // @grow 한정은 없어도 된다
         this@grow.name  eq "Int"
-        // You can still access everything:
+        // 여기서도 여전히 모든 프로퍼티에 접근할 수 있다
         this@DNA.name  eq "DNA"
         this@Seed.name  eq "Seed"
         this@Fruit.name  eq "Fruit"
       }
-      // Extension functions on outer classes:
+      // 외부 클래스에 대한 확장 함수들
       fun Seed.plant() {}
       fun Fruit.plant() {}
       fun whichThis() {
-        // Defaults to the current class:
+        // 디폴트는 현재 클래스이다
         this.name eq "DNA"
-        // Redundant qualification:
+        // @DNA 한정은 없어도 된다
         this@DNA.name  eq "DNA"
-        // The others must be explicit:
+        // 다른 클래스 한정은 꼭 명시해야 한다
         this@Seed.name  eq "Seed"
         this@Fruit.name  eq "Fruit"
       }
@@ -62,21 +63,21 @@ class Fruit { // Implicit label @Fruit
   }
 }
 
-// Extension function:
+// 확장 함수
 fun Fruit.grow(amount: Int) {
   absorbWater(amount)
-  // Calls Fruit's version of changeColor():
+  // Fruit의 'changeColor()'를 호출한다
   changeColor("Red") eq "Fruit Red"
 }
 
-// Inner-class extension function:
+// 내부 클래스의 확장 함수
 fun Fruit.Seed.grow(n: Int) {
   germinate()
-  // Calls Seed's version of changeColor():
+  // Seed의 `changeColor()`를 호출한다
   changeColor("Green") eq "Seed Green"
 }
 
-// Inner-class extension function:
+// 내부 클래스의 확장 함수
 fun Fruit.Seed.DNA.grow(n: Int) = n.grow()
 
 fun main() {

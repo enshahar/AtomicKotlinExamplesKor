@@ -11,13 +11,13 @@ fun main() {
   constants eq
     "{Pi=3.141, e=2.718, phi=1.618}"
 
-  // Look up a value from a key:
+  // 키에 해당하는 값을 찾는다
   constants["e"] eq 2.718              // [1]
   constants.keys eq setOf("Pi", "e", "phi")
   constants.values eq "[3.141, 2.718, 1.618]"
 
   var s = ""
-  // Iterate through key-value pairs:
+  // 키-값 쌍을 이터레이션한다
   for (entry in constants) {           // [2]
     s += "${entry.key}=${entry.value}, "
   }

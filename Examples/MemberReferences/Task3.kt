@@ -6,8 +6,8 @@ import atomictest.eq
 val Int.isEven: Boolean
   get() = this % 2 == 0
 
-// Returns all the divisors of the number
-// except 1 and the number itself
+// 어떤 수의 모든 약수를 반환한다
+// 이때 1과 그 수 자신은 제외된다
 private fun getNonTrivialDivisors(num: Int): List<Int> {
   return (2 until num).filter { num % it == 0 }
 }

@@ -9,7 +9,7 @@ fun main() {
     .map { it * it }
     .any { it < 10 } eq true
 
-  // Equivalent to:
+  // 다음과 같다
   val mid1 = list.filter { it % 2 == 0 }
   mid1 eq listOf(2, 4)
   val mid2 = mid1.map { it * it }

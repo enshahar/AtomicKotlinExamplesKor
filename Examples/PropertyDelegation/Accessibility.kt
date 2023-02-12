@@ -9,7 +9,7 @@ class Person(
   private val first: String,
   private val last: String
 ) {
-  val name by     // SAM conversion:
+  val name by     // SAM 변환:
   ReadOnlyProperty<Person, String> { _, _ ->
     "$first $last"
   }

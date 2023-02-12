@@ -10,11 +10,11 @@ fun interface Counter {
 object CounterFactory {
   private var count = 0
   fun new(name: String): Counter {
-    // Local inner class:
+    // 지역 내부 클래스
     class Local : Counter {
       init { trace("Local()") }
       override fun next(): Int {
-        // Access local identifiers:
+        // 함수의 지역 변수나 외부 객체 프로퍼티에 접근할 수 있다
         trace("$name $count")
         return count++
       }
@@ -22,7 +22,7 @@ object CounterFactory {
     return Local()
   }
   fun new2(name: String): Counter {
-    // Instance of an anonymous inner class:
+    // 익명 내부 클래스 인스턴스
     return object: Counter {
       init { trace("Counter()") }
       override fun next(): Int {
@@ -33,7 +33,7 @@ object CounterFactory {
   }
   fun new3(name: String): Counter {
     trace("Counter()")
-    return Counter { // SAM conversion
+    return Counter { // SAM 변환
       trace("$name $count")
       count++
     }

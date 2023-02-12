@@ -4,8 +4,8 @@
 class Hamster {
   fun speak() = "Squeak! "
   fun exercise() =
-    this.speak() +   // Qualified with 'this'
-      speak() +      // Without 'this'
+    this.speak() +   // 'this'로 한정함
+      speak() +      // 'this' 없이 호출함
       "Running on wheel"
 }
 

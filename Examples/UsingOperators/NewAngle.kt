@@ -5,10 +5,10 @@ import atomictest.eq
 fun main() {
   val list = MutableList(10) { 'a' + it }
   list[7] eq 'h' // operator get()
-  list.get(8) eq 'i' // Explicit call
+  list.get(8) eq 'i' // 명시적 호출
   list[9] = 'x' // operator set()
-  list.set(9, 'x') // Explicit call
+  list.set(9, 'x') // 명시적 호출
   list[9] eq 'x'
   ('d' in list) eq true // operator contains()
-  list.contains('e') eq true // Explicit call
+  list.contains('e') eq true // 명시적 호출
 }

@@ -12,7 +12,7 @@ fun testCode(code: Int) {
 
 fun main() {
   try {
-    // A1 is 161 in base-16 (hex) notation:
+    // A1은 16진수 표기로 161이다
     testCode("A1".toInt(16))
   } catch (e: IllegalArgumentException) {
     e.message eq

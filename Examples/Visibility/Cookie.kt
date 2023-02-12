@@ -20,7 +20,7 @@ class Cookie(
 fun main() {
   val x = Cookie(false)
   x.bite()
-  // Can't access private members:
+  // private 멤버에 접근할 수 없다
   // x.isReady
   // x.crumble()
   x.eat()

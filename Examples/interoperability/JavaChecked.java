@@ -6,8 +6,8 @@ import java.nio.file.*;
 import static atomictest.AtomicTestKt.eq;
 
 public class JavaChecked {
-  // Build path to current source file, based
-  // on directory where Gradle is invoked:
+  // 그레이들이 호출된 현재 디렉터리를 기준으로
+  // 대상 파일에 대한 경로를 만든다
   static Path thisFile = Paths.get(
     "DataFiles", "file_wubba.txt");
   public static void main(String[] args) {
@@ -16,18 +16,18 @@ public class JavaChecked {
       source = new BufferedReader(
         new FileReader(thisFile.toFile()));
     } catch(FileNotFoundException e) {
-      // Recover from file-open error
+      // 파일을 열 때 발생한 오류를 복구한다
     }
     try {
       String first = source.readLine();
       eq(first, "wubba lubba dub dub");
     } catch(IOException e) {
-      // Recover from read() error
+      // read()에서 발생한 오류를 복구한다
     }
     try {
       source.close();
     } catch(IOException e) {
-      // Recover from close() error
+      // close()에서 발생한 오류를 복구한다
     }
   }
 }

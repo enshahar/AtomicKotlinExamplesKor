@@ -18,37 +18,37 @@ open class GreatApe {
 class Bonobo : GreatApe() {
   override fun call() = "Eep!"
   override fun eat() {
-    // Modify the base-class var:
+    // 기반 클래스의 var 프로퍼티를 변경한다
     energy += 10
-    // Call the base-class version:
+    // 기반 클래스의 함수를 호출한다
     super.eat()
   }
-  // Add a function:
+  // 함수를 추가한다
   fun run() = "Bonobo run"
 }
 
 class Chimpanzee : GreatApe() {
-  // New property:
+  // 새 프로퍼티
   val additionalEnergy = 20
   override fun call() = "Yawp!"
   override fun eat() {
     energy += additionalEnergy
     super.eat()
   }
-  // Add a function:
+  // 함수를 추가한다
   fun jump() = "Chimp jump"
 }
 
 fun talk(ape: GreatApe): String {
-  // ape.run()  // Not an ape function
-  // ape.jump() // Nor this
+  // ape.run()  // ape의 함수가 아니다
+  // ape.jump() // 역시 ape의 함수가 아니다
   ape.eat()
   ape.climb(10)
   return "${ape.call()} ${ape.energyLevel()}"
 }
 
 fun main() {
-  // Cannot access 'energy':
+  // 'energy'에 접근할 수 없다
   // GreatApe().energy
   talk(GreatApe()) eq "Hoo! Energy: 0"
   talk(Bonobo()) eq "Eep! Energy: 10"

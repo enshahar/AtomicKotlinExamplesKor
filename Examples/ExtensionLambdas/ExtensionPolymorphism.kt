@@ -16,7 +16,7 @@ fun Base.g() = f()
 fun Base.h(xl: Base.() -> Int) = xl()
 
 fun main() {
-  val b: Base = Derived() // Upcast
+  val b: Base = Derived() // 업캐스트
   b.g() eq 99
   b.h { f() } eq 99
 }

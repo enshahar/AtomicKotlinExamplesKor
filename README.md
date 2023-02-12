@@ -24,7 +24,7 @@ includes tests to verify that the code in the book is correct.
   * [Verify Your Installation](#verify-your-installation)
   * [Installing and Running the Book Examples](#installing-and-running-the-book-examples)
 - [Appendix A: Command-Line Basics](#appendix-a-command-line-basics)
-  * [Editors](#editors)
+  * [Editors](#editors)stab
   * [The Shell](#the-shell)
     + [Starting a Shell](#starting-a-shell)
     + [Directories](#directories)

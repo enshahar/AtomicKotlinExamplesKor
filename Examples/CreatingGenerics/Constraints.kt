@@ -5,22 +5,21 @@ import kotlin.random.Random
 
 private val rnd = Random(47)
 
-// Accesses action() but can't
-// return the exact type:
+// action()에 접근할 수 있지만 정확한 타입을 반환할 수 없다
 fun List<Disposable>.inexact(): Disposable {
   val d: Disposable = this[rnd.nextInt(size)]
   d.action()
   return d
 }
 
-// Can't access action() without a constraint:
+// 제약이 없어서 action()에 접근할 수 없다
 fun <T> List<T>.noAccess(): T {
   val d: T = this[rnd.nextInt(size)]
   // d.action()
   return d
 }
 
-// Access action() and return the exact type:
+// action()에 접근하고 정확한 타입을 반환한다
 fun <T: Disposable> List<T>.both(): T {
   val d: T = this[rnd.nextInt(size)]
   d.action()

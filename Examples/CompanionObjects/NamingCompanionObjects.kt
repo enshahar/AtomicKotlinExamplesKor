@@ -19,6 +19,6 @@ fun main() {
   WithNamed.s() eq "from Named"
   WithNamed.Named.s() eq "from Named"
   WithDefault.s() eq "from Default"
-  // The default name is "Companion":
+  // 디폴트 이름은 'Companion'이다
   WithDefault.Companion.s() eq "from Default"
 }

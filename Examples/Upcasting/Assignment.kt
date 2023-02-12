@@ -5,7 +5,7 @@ import upcasting.*
 fun main() {
   val shape1: Shape = Square()
   val shape2: Shape = Triangle()
-  // Doesn't compile:
+  // 컴파일되지 않는다
   // shape1.color()
   // shape2.rotate()
 }

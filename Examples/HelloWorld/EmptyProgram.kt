@@ -2,5 +2,5 @@
 // (c)2021 Mindview LLC. See Copyright.txt for permissions.
 
 fun main() {
-  // Program code here ...
+  // 여기에 프로그램 코드가 들어감
 }
