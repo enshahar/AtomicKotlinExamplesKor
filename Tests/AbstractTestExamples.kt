@@ -1,19 +1,29 @@
 import atomictest.ERROR_TAG
-import org.junit.Assert
-import org.junit.runner.JUnitCore
+import org.junit.jupiter.api.Assertions.*
+import org.junit.platform.engine.discovery.DiscoverySelectors.selectClass
+import org.junit.platform.launcher.core.LauncherDiscoveryRequestBuilder
+import org.junit.platform.launcher.core.LauncherFactory
+import org.junit.platform.launcher.listeners.SummaryGeneratingListener
 import java.io.ByteArrayInputStream
 import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.PrintStream
 import java.util.function.Consumer
 
+
 abstract class AbstractTestExamples {
 
-  private val junit = JUnitCore()
 
   protected fun testJUnitClass(testClass: Class<*>) {
-    val result = junit.run(testClass)
-    Assert.assertTrue(result.wasSuccessful())
+    val request =
+      LauncherDiscoveryRequestBuilder.request()
+        .selectors(selectClass(testClass))
+        .build()
+    //val plan = LauncherFactory.create().discover(request)
+    val launcher = LauncherFactory.create()
+    val summaryListener = SummaryGeneratingListener()
+    launcher.execute(request, summaryListener)
+    assertTrue(summaryListener.summary.totalFailureCount == 0L)
   }
 
   protected fun testExample(fileName: String, main: Runnable) {
@@ -43,7 +53,7 @@ abstract class AbstractTestExamples {
     val result = runAndGetOutput(main).let {
       if (trim) it.trim() else it
     }
-    Assert.assertEquals(result.normalizeLineSeparators(), output.normalizeLineSeparators())
+    assertEquals(result.normalizeLineSeparators(), output.normalizeLineSeparators())
   }
 
   private fun runAndGetOutput(main: Consumer<Array<String>>): String {
@@ -68,12 +78,12 @@ abstract class AbstractTestExamples {
 
     main.accept(arrayOf())
 
-    Assert.assertEquals(out.toString().trim().normalizeLineSeparators(), output.normalizeLineSeparators())
+    assertEquals(out.toString().trim().normalizeLineSeparators(), output.normalizeLineSeparators())
   }
 
   private fun testNoErrors(main: Consumer<Array<String>>) {
     val output = runAndGetOutput(main)
-    Assert.assertFalse("Program completed with errors:\n$output", output.contains(ERROR_TAG))
+    assertFalse(output.contains(ERROR_TAG), "Program completed with errors:\n$output")
   }
 }
 

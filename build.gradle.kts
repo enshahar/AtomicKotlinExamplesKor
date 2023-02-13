@@ -35,7 +35,9 @@ dependencies {
     implementation(kotlin("test"))
 
     // For tests in Tests
-    testImplementation(kotlin("test-junit"))
+    testImplementation(kotlin("test-junit5"))
+    testImplementation("org.junit.platform:junit-platform-launcher")
+    testImplementation("org.junit.platform:junit-platform-engine")
 
     // Logging
     implementation("io.github.microutils:kotlin-logging:1.4.6")
@@ -45,6 +47,7 @@ dependencies {
 apply(from = "gradle/tasks.gradle")
 
 tasks.withType<Test> {
+    useJUnitPlatform()
     testLogging {
         exceptionFormat = org.gradle.api.tasks.testing.logging.TestExceptionFormat.FULL
     }
